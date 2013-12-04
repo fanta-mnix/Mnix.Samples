@@ -10,11 +10,11 @@ namespace Mnix.RestSample.ViewModels
     public class FirstViewModel 
 		: MvxViewModel
     {
-        [ServiceStack.ServiceHost.Route("/{username}", Verbs="GET")]
+        [ServiceStack.ServiceHost.Route("/{Username}", Verbs="GET")]
         public class ProfileRequest : ServiceStack.ServiceHost.IReturn<Profile>
         {
             //[DataMember]
-            public string username { get; set; }
+            public string Username { get; set; }
         }
 
         public class Profile
@@ -51,12 +51,12 @@ namespace Mnix.RestSample.ViewModels
         }
         
 
-        private IMvxCommand mSearchCommand;
+        private MvxAsyncCommand mSearchCommand;
         public ICommand SearchCommand
         {
             get
             {
-                return mSearchCommand = mSearchCommand ?? new MvxCommand(Query);
+                return mSearchCommand = mSearchCommand ?? new MvxAsyncCommand(Query);
             }
         }
 
@@ -65,17 +65,17 @@ namespace Mnix.RestSample.ViewModels
             mServiceClient = restClient;
         }
 
-        private void Query()
+        private async Task Query()
         {
             try
             {
-                mServiceClient.GetAsync(new ProfileRequest { username = Username },
-                    (profile) => Data = profile.ToString(),
-                    (profile, exception) => Data = exception.Message);
+                //mClient.get
+                Profile p = await mServiceClient.GetAsync(new ProfileRequest { Username = Username });
+                Data = "Hello " + p.name;
             }
-            catch (Exception exc)
+            catch (System.Exception exc)
             {
-                Data = exc.Message;
+                Data = "Error: " + exc.Message;
             }
         }
         
