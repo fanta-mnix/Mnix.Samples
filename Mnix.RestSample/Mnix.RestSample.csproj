@@ -73,7 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Mnix.Plugins\Mnix.Plugins.Rest\Mnix.Plugins.Rest.csproj">
+    <ProjectReference Include="..\..\Mnix.Plugins\Rest.Rest\Mnix.Plugins.Rest\Mnix.Plugins.Rest.csproj">
       <Project>{fcfcfb61-8f83-463b-9afb-0f92d1a5cc0c}</Project>
       <Name>Mnix.Plugins.Rest</Name>
     </ProjectReference>

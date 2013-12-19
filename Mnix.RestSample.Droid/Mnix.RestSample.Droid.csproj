@@ -119,11 +119,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\Mnix.Plugins\Mnix.Plugins.Rest.Droid\Mnix.Plugins.Rest.Droid.csproj">
+    <ProjectReference Include="..\..\Mnix.Plugins\Rest.Rest\Mnix.Plugins.Rest.Droid\Mnix.Plugins.Rest.Droid.csproj">
       <Project>{ba08fa41-4edc-40c7-a72f-1d454c27855b}</Project>
       <Name>Mnix.Plugins.Rest.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Mnix.Plugins\Mnix.Plugins.Rest\Mnix.Plugins.Rest.csproj">
+    <ProjectReference Include="..\..\Mnix.Plugins\Rest.Rest\Mnix.Plugins.Rest\Mnix.Plugins.Rest.csproj">
       <Project>{fcfcfb61-8f83-463b-9afb-0f92d1a5cc0c}</Project>
       <Name>Mnix.Plugins.Rest</Name>
     </ProjectReference>
