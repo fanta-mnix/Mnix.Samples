@@ -4,6 +4,7 @@ using System;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Mnix.Plugins.Rest;
 
 namespace Mnix.RestSample.ViewModels
 {

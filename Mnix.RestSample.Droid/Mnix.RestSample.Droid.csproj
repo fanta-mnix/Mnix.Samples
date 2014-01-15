@@ -23,6 +23,7 @@
     <JavaOptions />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,7 +88,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\RestPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\RestPluginBootstrap.cs">
+      <DependentUpon>RestPluginBootstrap.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -98,6 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Bootstrap\RestPluginBootstrap.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RestPluginBootstrap.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -117,7 +126,9 @@
     <AndroidResource Include="Resources\Drawable\splash.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Mnix.Plugins\Rest.Rest\Mnix.Plugins.Rest.Droid\Mnix.Plugins.Rest.Droid.csproj">
       <Project>{ba08fa41-4edc-40c7-a72f-1d454c27855b}</Project>
