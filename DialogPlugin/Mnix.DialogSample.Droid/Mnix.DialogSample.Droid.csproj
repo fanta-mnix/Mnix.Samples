@@ -5,25 +5,23 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E4B157D4-99DA-4638-9A50-95E8340B9C8C}</ProjectGuid>
+    <ProjectGuid>{7A15369D-5727-45E9-9518-7C8EBC963157}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mnix.RestSample.Droid</RootNamespace>
-    <AssemblyName>Mnix.RestSample.Droid</AssemblyName>
+    <RootNamespace>Mnix.DialogSample.Droid</RootNamespace>
+    <AssemblyName>Mnix.DialogSample.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize />
     <JavaOptions />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,32 +45,25 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.CrossCore">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.14\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.CrossCore.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.CrossCore.Droid">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.14\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.MvvmCross">
       <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.14\lib\MonoAndroid\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.MvvmCross.Binding">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.14\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.14\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.MvvmCross.Droid">
       <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.14\lib\MonoAndroid\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.14\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
@@ -95,12 +86,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\RestPluginBootstrap.cs">
-      <DependentUpon>RestPluginBootstrap.tt</DependentUpon>
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="DialogPluginBootstrap.cs">
+      <DependentUpon>DialogPluginBootstrap.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,10 +100,9 @@
     <Compile Include="Views\FirstView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Bootstrap\RestPluginBootstrap.tt">
+    <None Include="DialogPluginBootstrap.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RestPluginBootstrap.cs</LastGenOutput>
+      <LastGenOutput>DialogPluginBootstrap.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
@@ -137,33 +127,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Mnix.Plugins\Rest\Mnix.Plugins.Rest.Droid\Mnix.Plugins.Rest.Droid.csproj">
-      <Project>{ba08fa41-4edc-40c7-a72f-1d454c27855b}</Project>
-      <Name>Mnix.Plugins.Rest.Droid</Name>
+    <Folder Include="Bootstrap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Mnix.Plugins\Dialog\Mnix.Plugins.Dialog.Droid\Mnix.Plugins.Dialog.Droid.csproj">
+      <Project>{242660ca-1642-44f9-ab82-8bed18e9a4fe}</Project>
+      <Name>Mnix.Plugins.Dialog.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Mnix.Plugins\Rest\Mnix.Plugins.Rest\Mnix.Plugins.Rest.csproj">
-      <Project>{fcfcfb61-8f83-463b-9afb-0f92d1a5cc0c}</Project>
-      <Name>Mnix.Plugins.Rest</Name>
+    <ProjectReference Include="..\..\..\Mnix.Plugins\Dialog\Mnix.Plugins.Dialog\Mnix.Plugins.Dialog.csproj">
+      <Project>{e8707414-01aa-4ee4-959c-23f0ece66546}</Project>
+      <Name>Mnix.Plugins.Dialog</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Mnix.Plugins\ServiceStack.Text\src\ServiceStack.Text.Android\ServiceStack.Text.Android\ServiceStack.Text.Android.csproj">
-      <Project>{56838cd4-8ebc-4860-a3e1-1697875bbc61}</Project>
-      <Name>ServiceStack.Text.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Mnix.Plugins\ServiceStack\src\ServiceStack.Common.Android\ServiceStack.Common.Android.csproj">
-      <Project>{bea92e9f-00b1-4923-bd81-7f3a9ca24408}</Project>
-      <Name>ServiceStack.Common.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Mnix.Plugins\ServiceStack\src\ServiceStack.Interfaces\ServiceStack.Interfaces.PCL.csproj">
-      <Project>{a9a1ca9e-f399-490f-aaa3-dc668daab3c0}</Project>
-      <Name>ServiceStack.Interfaces.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mnix.RestSample\Mnix.RestSample.csproj">
-      <Project>{3387f895-a3c7-482a-97fb-a949b72552df}</Project>
-      <Name>Mnix.RestSample</Name>
+    <ProjectReference Include="..\Mnix.DialogSample\Mnix.DialogSample.csproj">
+      <Project>{c335e812-1593-4467-97d2-fb27b23a3a7d}</Project>
+      <Name>Mnix.DialogSample</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
